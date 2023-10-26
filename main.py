@@ -3,12 +3,14 @@ import math
 
 # Función que devuelve el resultado de la ecuación
 def resolver():
-    a = (int)(entradaA.get())
-    b = (int)(entradaB.get())
-    c = (int)(entradaC.get())
+    a = (float)(entradaA.get())
+    b = (float)(entradaB.get())
+    c = (float)(entradaC.get())
     if (b*b - 4 * a * c < 0):
         labelRespuesta["text"] = "No tiene soluciones reales"
-    labelRespuesta["text"] = "Las soluciones son: ", int((-b + math.sqrt(b*b - 4 * a * c)) / (2 * a)), " y ", int((-b - math.sqrt(b*b - 4 * a * c)) / (2 * a))
+    x1 = float((-b + math.sqrt(b*b - 4 * a * c)) / (2 * a))
+    x2 = float((-b - math.sqrt(b*b - 4 * a * c)) / (2 * a))
+    labelRespuesta["text"] = "Las soluciones son: " + str(x1) + " y " + str(x2)
 
 # Abrimos una ventana
 window = tk.Tk()
