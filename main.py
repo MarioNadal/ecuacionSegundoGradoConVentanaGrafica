@@ -6,11 +6,12 @@ def resolver():
     a = (float)(entradaA.get())
     b = (float)(entradaB.get())
     c = (float)(entradaC.get())
-    if (b*b - 4 * a * c < 0):
+    if b*b - 4 * a * c < 0:
         labelRespuesta["text"] = "No tiene soluciones reales"
-    x1 = float((-b + math.sqrt(b*b - 4 * a * c)) / (2 * a))
-    x2 = float((-b - math.sqrt(b*b - 4 * a * c)) / (2 * a))
-    labelRespuesta["text"] = "Las soluciones son: " + str(x1) + " y " + str(x2)
+    else:
+        x1 = float((-b + math.sqrt(b*b - 4 * a * c)) / (2 * a))
+        x2 = float((-b - math.sqrt(b*b - 4 * a * c)) / (2 * a))
+        labelRespuesta["text"] = "Las soluciones son: " + str(x1) + " y " + str(x2)
 
 # Abrimos una ventana
 window = tk.Tk()
